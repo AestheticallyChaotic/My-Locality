@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+    <script src = "./cursorEvents.js"></script>
+    <script src = "./tour.js"></script>
+
+  </head>
+
+  <body>
+
+    <a-scene id="main-scene">
+
+        <a-sky 
+        id="main-container" 
+        radius="5000" 
+        color="#98DAFC"
+        rotation = "0 -90 0"
+        ></a-sky>
+        
+        <a-camera id="camera" wasd-controls="enabled:false;"></a-camera>
+
+        <a-entity
+          id="camera-cursor"
+          cursor
+          position="0 0 -1"
+          geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+          material="color: #fff; shader: flat"
+        >
+
+        <a-entity id="places-container" cursor-listener tour></a-entity>
+
+      </a-camera>
+    </a-scene>
+
+  </body>
+
+</html>
